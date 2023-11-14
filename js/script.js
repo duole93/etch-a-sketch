@@ -31,15 +31,22 @@ document.addEventListener('mouseup',()=>{
     console.log('isMouseDown : ', isMouseDown);
 });
 
-grid.forEach((item)=>{
+grid.forEach((item)=>
+{
     item.addEventListener('mouseenter', (event)=>{   
         if(isMouseDown){
             console.log(event.type);
             event.stopPropagation();
             event.target.style.backgroundColor='green';
         }
-    }
-)
+    });
+    item.addEventListener('mousedown', (event)=>{   
+        isMouseDown=true;
+            console.log(event.type);
+            event.stopPropagation();
+            event.target.style.backgroundColor='green';
+        })
+    
 });
 
 //clear
