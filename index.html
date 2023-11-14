@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Pad</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
     <script src="./js/script.js" defer></script>
 </head>
+
 <body>
     <section class="head">
         <h1 class="title">Pixel Pad</h1>
     </section>
     <section class="main">
-        <div class="container-control">
-            <input type="color" value="#000000" class="btn-color">
-            <button class="btn-brush">✏️</button>
-            <button class="btn-clear">🔄</button>
-            <button class="btn-erase">⏹️</button>
-            <input type="range" min="12" max="64" id="dimension" value="32">
-            <p class="dimension-text">32</p>
+        <div class="container">
+            <div class="container-control">
+                <input type="color" value="#000000" class="btn-color">
+                <button class="btn-brush">✏️</button>
+                <button class="btn-clear">🔄</button>
+                <button class="btn-erase">⏹️</button>
+                <div class="slider"> 
+                    <input type="range" min="12" max="64" id="dimension" value="32" >
+                    <p class="dimension-text">32 x 32</p>
+                </div>
+
+            </div>
+            <div class="container-grid"></div>
         </div>
-        <div class="container-grid"></div>
+
     </section>
 </body>
+
 </html>

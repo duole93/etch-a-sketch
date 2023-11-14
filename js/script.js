@@ -5,7 +5,7 @@ const btnErase = document.querySelector(".btn-erase");
 const btnBrush = document.querySelector(".btn-brush");
 const btnDimension = document.querySelector("#dimension");
 const txtDimension = document.querySelector(".dimension-text");
-const TOTAL_WIDTH = 400;
+const TOTAL_WIDTH = 500;
 
 //grid size initialize method
 let x = 40;
@@ -20,6 +20,8 @@ gridContainer.style.height = `${TOTAL_WIDTH + 2}px`;
 gridContainer.style.border = "1px solid gray";
 gridContainer.append(...grid);
 toggleEraseBrush(isErase);
+
+
 //setColor
 colorPicker.addEventListener('change', (event)=>{
 	color=event.target.value;
@@ -62,12 +64,13 @@ btnBrush.addEventListener("click", () => {
 });
 
 //dimension
-btnDimension.addEventListener("change", (event) => {
+btnDimension.addEventListener("mousedown", (event) => {
 	x = event.target.value;
 	
 	console.log("x :>> ", x);
-	let cellWidth=TOTAL_WIDTH/x;
-	txtDimension.textContent=x;
+	
+	txtDimension.textContent=`${x} x ${x}`;
+	
 	//empty current grid
 	grid.length=0;
 	//create new grid
