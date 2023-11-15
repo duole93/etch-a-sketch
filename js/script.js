@@ -23,7 +23,7 @@ toggleEraseBrush(isErase);
 
 
 //setColor
-colorPicker.addEventListener('change', (event)=>{
+colorPicker.addEventListener('input', (event)=>{
 	color=event.target.value;
 })
 
@@ -64,9 +64,10 @@ btnBrush.addEventListener("click", () => {
 });
 
 //dimension
-btnDimension.addEventListener("mousedown", (event) => {
+btnDimension.addEventListener("input", (event) => {
 	x = event.target.value;
-	
+	isErase = false;
+	toggleEraseBrush(isErase);
 	console.log("x :>> ", x);
 	
 	txtDimension.textContent=`${x} x ${x}`;
